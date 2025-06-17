@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="./src/assets/dog-duotone.svg" />
+    
+    <link rel="stylesheet" href="./src/styles/index.css">
+    
+    <title>Mundo Pet</title>
+</head>
+<body>
+    <div class="container">
+
+        <main>
+            <img src="./src/assets/Logo.svg" alt="Logo" class="logo">
+    
+            <section class="schedule">
+                <header>
+                    <h1>Sua agenda</h1>
+                    <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
+    
+                    <input type="date">
+                </header>
+    
+                <section class="schedule-periods">
+                    <header>
+                        <img src="./src/assets/Sun-Fog--Streamline-Solar.svg" alt="Manhã">
+                        <strong>Manhã</strong>
+                        <span>09h-12h</span>
+                    </header>
+                    <ul id="period-morning" class="period">
+                        <li>
+                            <strong>09:00</strong>
+                            <span><strong>Thor / </strong>Fernanda Costa</span>
+                            <span>Vacinação</span>
+                            <p>Remover Agendamento</p>
+                        </li>
+                    </ul>
+                </section>
+    
+                <section class="schedule-periods">
+                    <header>
+                        <img src="./src/assets/Cloud-Sun-4--Streamline-Solar.svg" alt="Tarde">
+                        <strong>Tarde</strong>
+                        <span>13h-18h</span>
+                    </header>
+                    <ul id="period-afternoon" class="period">
+                        <li>
+                            <strong>13:00</strong>
+                            <span><strong>Mel / </strong>João Pedro</span>
+                            <span>Corte de Unhas</span>
+                            <p>Remover Agendamento</p>
+                        </li>
+    
+                        <li>
+                            <strong>14:00</strong>
+                            <span><strong>Bella / </strong>Yuri Alberto</span>
+                            <span>Aplicação de Anti-pulgas</span>
+                            <p>Remover Agendamento</p>
+                        </li>
+    
+                        <li>
+                            <strong>15:00</strong>
+                            <span><strong>Simba / </strong>Memphis Depay</span>
+                            <span>Tosa Higiênica</span>
+                            <p>Remover Agendamento</p>
+                        </li>
+                    </ul>
+                </section>
+    
+                <section class="schedule-periods">
+                    <header>
+                        <img src="./src/assets/Moon-Stars--Streamline-Solar.svg" alt="Noite">
+                        <strong>Noite</strong>
+                        <span>09h-12h</span>
+                    </header>
+                    <ul id="period-morning" class="period">
+                        <li>
+                            <strong>20:00</strong>
+                            <span><strong>Max / </strong>Matheus Antonagi</span>
+                            <span>Limpeza de Dentes</span>
+                            <p>Remover Agendamento</p>
+                        </li>   
+                    </ul>
+                </section>
+    
+            </section>
+    
+            <section class="new-schedule">
+                <button>NOVO AGENDAMENTO</button>
+            </section>
+        </main>
+    
+        <form class="form">
+            <img src="./src/assets/Close-Small-White-Fill--Streamline-Rounded-Fill---Material-Symbols.svg" alt="Fechar">
+            <header>
+                <h1>Agende um atendimento</h1>
+                <p>Preencha os dados do cliente para realizar o agendamento:</p>
+            </header>
+    
+            <label for="responsible-name" class="label">Nome do tutor</label>
+            <div class="input">
+                <i><img src="./src/assets/User--Streamline-Solar.svg" alt="Usuário"></i>
+                <input type="text" name="responsible-name" id="responsible-name" placeholder="Valéria P" required />
+            </div>
+    
+            <label for="pet-name" class="label">Nome do pet</label>
+            <div class="input">
+                <i><img src="./src/assets/Pet-Paw--Streamline-Core.svg" alt="Pet"></i>
+                <input type="text" name="pet-name" id="pet-name" placeholder="Rex" required />
+            </div>
+    
+            <label for="phone" class="label">Telefone</label>
+            <div class="input">
+                <i><img src="./src/assets/Phone--Streamline-Solar.svg" alt="Telefone"></i>
+                <input type="number" name="phone" id="phone" placeholder="(00) 0 0000-0000" required />
+            </div>
+    
+            <label for="description" class="label">Descrição do serviço</label>
+            <div class="input">
+                <input type="text" name="description" id="description" placeholder="Banho e Tosa" required />
+            </div>
+    
+            <label for="date" class="label">Data</label>
+            <div class="input">
+                <i><img src="./src/assets/Calendar-Minimalistic--Streamline-Solar.svg" alt="Calendário"></i>
+                <input type="date" name="date" id="date" required />
+            </div>
+    
+            <label for="hour" class="label">Hora</label>
+            <div class="input">
+                <i><img src="./src/assets/Clock-Circle--Streamline-Solar.svg" alt="Relógio"></i>
+                <input type="time" name="hour" id="hour" required />
+            </div>
+    
+            <button type="submit">
+                AGENDAR
+            </button>
+        </form>
+        
+    </div>
+</body>
+</html>
