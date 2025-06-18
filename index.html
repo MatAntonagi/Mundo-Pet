@@ -24,8 +24,11 @@
                 <header>
                     <h1>Sua agenda</h1>
                     <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
-    
-                    <input type="date">
+                    
+                    <div class="input">
+                        <label for="date"><i><img src="./src/assets/Calendar-Minimalistic--Streamline-Solar.svg" alt=""></i></label>
+                        <input type="date" name="date">
+                    </div>
                 </header>
     
                 <section class="schedule-periods">
@@ -38,7 +41,7 @@
                         <li>
                             <strong>09:00</strong>
                             <span><strong>Thor / </strong>Fernanda Costa</span>
-                            <span>Vacinação</span>
+                            <br><span>Vacinação</span>
                             <p>Remover Agendamento</p>
                         </li>
                     </ul>
@@ -54,21 +57,21 @@
                         <li>
                             <strong>13:00</strong>
                             <span><strong>Mel / </strong>João Pedro</span>
-                            <span>Corte de Unhas</span>
+                            <br><span>Corte de Unhas</span>
                             <p>Remover Agendamento</p>
                         </li>
     
                         <li>
                             <strong>14:00</strong>
                             <span><strong>Bella / </strong>Yuri Alberto</span>
-                            <span>Aplicação de Anti-pulgas</span>
+                            <br><span>Aplicação de Anti-pulgas</span>
                             <p>Remover Agendamento</p>
                         </li>
     
                         <li>
                             <strong>15:00</strong>
                             <span><strong>Simba / </strong>Memphis Depay</span>
-                            <span>Tosa Higiênica</span>
+                            <br><span>Tosa Higiênica</span>
                             <p>Remover Agendamento</p>
                         </li>
                     </ul>
@@ -84,7 +87,7 @@
                         <li>
                             <strong>20:00</strong>
                             <span><strong>Max / </strong>Matheus Antonagi</span>
-                            <span>Limpeza de Dentes</span>
+                            <br><span>Limpeza de Dentes</span>
                             <p>Remover Agendamento</p>
                         </li>   
                     </ul>
@@ -131,6 +134,7 @@
             <div class="input">
                 <i><img src="./src/assets/Calendar-Minimalistic--Streamline-Solar.svg" alt="Calendário"></i>
                 <input type="date" name="date" id="date" required />
+                <i><img src="./src/assets/arrow-down.svg" alt=""></i>
             </div>
     
             <label for="hour" class="label">Hora</label>
