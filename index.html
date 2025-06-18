@@ -101,7 +101,7 @@
         </main>
     
         <form class="form">
-            <img src="./src/assets/Close-Small-White-Fill--Streamline-Rounded-Fill---Material-Symbols.svg" alt="Fechar">
+            <img class="close" src="./src/assets/Close-Small-White-Fill--Streamline-Rounded-Fill---Material-Symbols.svg" alt="Fechar">
             <header>
                 <h1>Agende um atendimento</h1>
                 <p>Preencha os dados do cliente para realizar o agendamento:</p>
@@ -134,7 +134,6 @@
             <div class="input">
                 <i><img src="./src/assets/Calendar-Minimalistic--Streamline-Solar.svg" alt="Calendário"></i>
                 <input type="date" name="date" id="date" required />
-                <i><img src="./src/assets/arrow-down.svg" alt=""></i>
             </div>
     
             <label for="hour" class="label">Hora</label>
@@ -142,10 +141,12 @@
                 <i><img src="./src/assets/Clock-Circle--Streamline-Solar.svg" alt="Relógio"></i>
                 <input type="time" name="hour" id="hour" required />
             </div>
-    
-            <button type="submit">
-                AGENDAR
-            </button>
+            
+            <div class="submit">
+                <button type="submit">
+                    AGENDAR
+                </button>
+            </div>
         </form>
         
     </div>

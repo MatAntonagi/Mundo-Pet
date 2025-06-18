@@ -1,0 +1,127 @@
+.schedule{
+    padding: .75rem 1.25rem;
+}
+
+.schedule > header{
+    display: flex;
+    flex-direction: column;
+
+    & h1{
+        font: var(--title);
+        color: var(--content-primary);
+        margin-bottom: .25rem;
+    }
+
+    & p{
+        font: var(--paragraph-medium);
+        color: var(--content-secondary);
+        margin-bottom: .75rem;
+    }
+
+    & .input{
+        width: 11.45rem;
+        height: 3rem;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        padding: .875rem .75rem;
+
+        position: relative;
+
+        margin-bottom: 2rem;
+    }
+}
+
+.schedule-periods{
+    background: var(--background-tertiary);
+    padding: .75rem 0;
+    margin-bottom: .75rem;
+    border-radius: .625rem;
+}
+
+.schedule-periods > header{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-primary);
+    padding: 0 1.25rem .75rem;
+
+    & img{
+        margin-right: .75rem;
+    }
+
+    & strong{
+        margin-right: auto;
+        font: var(--label-large);
+    }
+
+    & span{
+        font: var(--label-large);
+        color: var(--content-secondary);
+    }
+}
+
+.period{
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & li{
+        border-bottom: 1px solid var(--border-primary);
+
+        & strong{
+            font: var(--label-medium);
+        }
+    
+        & span{
+            font: var(--paragraph-medium);
+            color: var(--content-secondary);
+    
+            & strong{
+                font: var(--label-medium);
+                color: var(--content-primary);
+            }
+        }
+    
+        & p{
+            margin-left: auto;
+            margin-bottom: .75rem;
+            width: min-content;
+            white-space: nowrap;
+            margin-top: .5rem;
+            color: var(--content-tertiary);
+            font: var(--paragraph-small);
+    
+            &:hover{
+                color: var(--content-primary);
+                border-bottom: 1px solid var(--content-primary);
+            }
+        }
+    }
+
+    & li:last-child{
+        border-bottom: none;
+
+        & p{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.new-schedule{
+    margin-top: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-tertiary);
+    padding: 1.125rem 1.25rem;
+
+    & button{
+        background-color: var(--content-brand);
+        border: none;
+        border-radius: .5rem;
+        padding: .75rem 1.5rem;
+        font: var(--label-large);
+        color: var(--content);
+    }
+}
