@@ -47,11 +47,20 @@
 }
 
 body{
-    background-color: var(--background-primary);
-    color: var(--content-primary);
+  background-color: var(--background-primary);
+  color: var(--content-primary);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
+.disappear{
+  display: none;
 }
 
 .logo{
+  z-index: 7;
   position: sticky;
   top: 0;
   left: 0;
@@ -65,39 +74,82 @@ body{
   padding-left: .5rem;
 }
 
+.arrow-down{
+  position: absolute;
+  top: 50% - 1.5rem;
+  right: .75rem;
+  width: 1.5rem;
+  z-index: -1;
+}
+
+/* Firefox */
+input[type="date"],
+input[type="time"] {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+/* Outros Navegadores */
+input[type="time"]::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-calendar-picker-indicator {
-  width: 1.25rem;
-  height: 1.25rem;
-  padding-right: .5rem;
-  background: url(../assets/arrow-down.svg);
-  background-size: contain;
+  padding-right: .75rem;
+  opacity: 0;
   cursor: pointer;
 }
 
-input[type="date"]{
-  background-color: transparent;
-  border-radius: .75rem;
-  border: 2px solid var(--border-primary);
-  font: var(--label-large);
-  color: var(--content-secondary);
-  padding-left: 2.5rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+/* Firefox*/
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* Outros Navegadores */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type="date"]:hover{
-  border-color: var(--border-secondary);
+.input{
+    width: 100%;
+    height: 3rem;
+    padding: .75rem;
+    position: relative;
+    margin-bottom: 1rem;
+    
+    & input{
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding-left: 2.5rem;
+        border: 2px solid var(--border-primary);
+        border-radius: .75rem;
+        background-color: transparent;
+        font: var(--label-large);
+        color: var(--content-secondary);
+
+        &:hover{
+            border-color: var(--border-secondary);
+        }
+
+        &:focus{
+            border-color: var(--border-brand);
+            outline: none;
+            color: var(--content-primary);
+        }
+    }
 }
 
-input[type="date"]:focus{
-  border-color: var(--border-brand);
-  outline: none;
-  color: var(--content-primary);
+.input:last-child{
+    margin-bottom: 0;
+}
+
+button{
+  cursor: pointer;
 }
 
 @media (width >= 1100px){
-    
+  body{
+    position: relative;
+  }
 }
