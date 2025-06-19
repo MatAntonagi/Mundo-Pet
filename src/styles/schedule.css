@@ -130,6 +130,7 @@
 
         &:hover{
             background-color: var(--background-highlights);
+            box-shadow: 0px 0px 35px 1px rgba(146, 130, 250, .4);
         }
     }
 }
