@@ -82,13 +82,13 @@ body{
   z-index: -1;
 }
 
-/* Firefox */
-input[type="date"],
-input[type="time"] {
-  appearance: none;
-  -moz-appearance: textfield;
+/* Firefox Não aparece o i arrow-down pra nao sobrepor ao icone padrao, pois nao usa webkit. */
+@-moz-document url-prefix() {
+  i .arrow-down {
+    opacity: 0;
+  }
 }
-/* Outros Navegadores */
+
 input[type="time"]::-webkit-calendar-picker-indicator,
 input[type="date"]::-webkit-calendar-picker-indicator {
   padding-right: .75rem;
