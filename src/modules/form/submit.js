@@ -11,6 +11,9 @@ const selectedHour = document.querySelector("#hour")
 // Carrega a data atual.
 selectedDate.value = dayjs(new Date()).format("YYYY-MM-DD")
 
+// Define a data minima como sendo a data atual.
+selectedDate.min = dayjs(new Date()).format("YYYY-MM-DD")
+
 // Carrega a proxima hora.
 const nextHour = dayjs().add(1, "hour").minute(0).second(0) 
 selectedHour.value = nextHour.format("HH:mm")
