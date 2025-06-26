@@ -1,28 +1,31 @@
 import dayjs from "dayjs"
 
-const main = document.querySelector("main")
+const body = document.querySelector("body")
+const scheduleContainer = document.querySelector(".schedule-container")
 const formContainer = document.querySelector(".form-container")
 const form = document.querySelector("form")
 const closeBtn = document.getElementById("btn-close")
 const selectedDate = document.getElementById("date-form")
-const selectedHour = document.querySelector("#hour")
+const clientName = document.getElementById("responsible-name")
+const petName = document.getElementById("pet-name")
+const numberPhone = document.getElementById("phone")
+const description = document.getElementById("description")
+const hourSelect = document.querySelector("select")
+
+// Data atual para carregar o input.
+const inputToday = dayjs(new Date()).format("YYYY-MM-DD")
 
 
-// Carrega a data atual.
-selectedDate.value = dayjs(new Date()).format("YYYY-MM-DD")
+// Carrega a data atual e Define a data minima como sendo a data atual.
+selectedDate.value = inputToday
+selectedDate.min = inputToday
 
-// Define a data minima como sendo a data atual.
-selectedDate.min = dayjs(new Date()).format("YYYY-MM-DD")
-
-// Carrega a proxima hora.
-const nextHour = dayjs().add(1, "hour").minute(0).second(0) 
-selectedHour.value = nextHour.format("HH:mm")
-
-// Fecha o Form.
+// Fecha o Form no icone "X".
 closeBtn.addEventListener("click", () =>{
     if(!formContainer.classList.contains("disappear")){
         formContainer.classList.add("disappear"),
-        main.classList.remove("blur")
+        scheduleContainer.classList.remove("blur")
+        body.classList.remove("no-scroll")
     }
 })
 
@@ -30,4 +33,43 @@ form.onsubmit = (event) => {
     // Previne o comportamento padrão de carregamento.
     event.preventDefault()
 
+    try {
+        // Recupera o nome do cliente
+        const name = clientName.value.trim()
+        if(!name) {
+            return alert("Informe o nome do tutor.")
+        }
+
+        // Recupera o nome do pet
+        const pet = petName.value.trim()
+        if(!pet) {
+            return alert("Informe o nome do Pet")
+        }
+
+        const phone = numberPhone.value
+        if(!phone){
+            return alert("Insira um contato.")
+        }
+
+        const detail = description.value
+        if(!detail){
+            return ("insira uma descrição do serviço.")
+        }
+
+        // Recupera o horario
+        const selectedValue = hourSelect.value;
+        const selectedOption = hourSelect.options[hourSelect.selectedIndex];
+        if(!selectedOption){
+            return alert("Selecione a hora.")
+        }
+
+        // Recupera somente a hora
+        const [hour] = selectedOption.innerText.split(":")
+        console.log(hour)
+
+
+    } catch (error) {
+        alert("Não foi possivel realizar o agendamento.")
+    }
 }
+
