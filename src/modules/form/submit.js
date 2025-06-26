@@ -1,5 +1,7 @@
 import dayjs from "dayjs"
 
+import { scheduleNew } from "../../services/schedule-new.js"
+
 const body = document.querySelector("body")
 const scheduleContainer = document.querySelector(".schedule-container")
 const formContainer = document.querySelector(".form-container")
@@ -29,7 +31,7 @@ closeBtn.addEventListener("click", () =>{
     }
 })
 
-form.onsubmit = (event) => {
+form.onsubmit = async (event) => {
     // Previne o comportamento padrão de carregamento.
     event.preventDefault()
 
@@ -70,15 +72,15 @@ form.onsubmit = (event) => {
         const when = dayjs(selectedDate.value).add(hour, "hour")
 
         // Gera um id
-        const id = new Date().getTime()
+        const id = new Date().getTime().toString()
         
-        console.log({
+        await scheduleNew({
             name,
             pet,
             phone,
             detail,
             when,
-            id,
+            id
         })
 
 
