@@ -53,23 +53,36 @@ form.onsubmit = (event) => {
 
         const detail = description.value
         if(!detail){
-            return ("insira uma descrição do serviço.")
+            return alert("Insira a descrição do serviço.")
         }
 
         // Recupera o horario
         const selectedValue = hourSelect.value;
-        const selectedOption = hourSelect.options[hourSelect.selectedIndex];
-        if(!selectedOption){
-            return alert("Selecione a hora.")
+        const selectedOptionHour = hourSelect.options[hourSelect.selectedIndex];
+        if(!selectedValue){
+            return alert("Selecione a hora desejada.")
         }
 
         // Recupera somente a hora
-        const [hour] = selectedOption.innerText.split(":")
-        console.log(hour)
+        const [hour] = selectedOptionHour.innerText.split(":")
+
+        // Insere a hora na data
+        const when = dayjs(selectedDate.value).add(hour, "hour")
+
+        // Gera um id
+        const id = new Date().getTime()
+        
+        console.log({
+            name,
+            pet,
+            phone,
+            detail,
+            when,
+            id,
+        })
 
 
     } catch (error) {
         alert("Não foi possivel realizar o agendamento.")
     }
 }
-
