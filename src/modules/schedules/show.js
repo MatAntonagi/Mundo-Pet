@@ -15,6 +15,7 @@ export function scheduleShow({ dailySchedules }){
         // Renderiza os agendamentos por periodos.
         dailySchedules.forEach((schedule) => {
             const item = document.createElement("li")
+            item.dataset.id = schedule.id
             const time = document.createElement("strong")
             time.classList.add("hour")
             const names = document.createElement("span")
@@ -23,6 +24,7 @@ export function scheduleShow({ dailySchedules }){
             const phone = document.createElement("span")
             phone.classList.add("phone-input")
             const remove = document.createElement("p")
+            remove.classList.add("remove")
 
             time.textContent = dayjs(schedule.when).format("HH:mm")
             namePet.textContent = schedule.pet
