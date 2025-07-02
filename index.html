@@ -38,12 +38,12 @@
                         <span>09h-12h</span>
                     </header>
                     <ul id="period-morning" class="period">
-                        <li>
+                        <!--<li>
                             <strong class="hour">09:00</strong>
                             <span><strong>Thor</strong> / Fernanda Costa</span>
                             <span>Vacinação</span>
                             <p>Remover Agendamento</p>
-                        </li>
+                        </li>-->
                     </ul>
                 </section>
     
@@ -53,14 +53,14 @@
                         <strong>Tarde</strong>
                         <span>13h-18h</span>
                     </header>
-                    <!--<ul id="period-afternoon" class="period">
-                        <li>
+                    <ul id="period-afternoon" class="period">
+                        <!--<li>
                             <strong class="hour">13:00</strong>
                             <span><strong>Mel</strong> / João Pedro</span>
                             <span>Corte de Unhas</span>
                             <p>Remover Agendamento</p>
-                        </li>
-                    </ul> -->
+                        </li>-->
+                    </ul>
                 </section>
     
                 <section class="schedule-periods" id="evening">
@@ -69,14 +69,14 @@
                         <strong>Noite</strong>
                         <span>19h-21h</span>
                     </header>
-                    <!-- <ul id="period-evening" class="period">
-                        <li>
+                    <ul id="period-evening" class="period">
+                        <!--<li>
                             <strong class="hour">20:00</strong>
                             <span><strong>Max</strong> / Matheus Antonagi</span>
                             <span>Limpeza de Dentes</span>
                             <p>Remover Agendamento</p>
-                        </li>   
-                    </ul> -->
+                        </li>-->   
+                    </ul>
                 </section>
     
             </section>
@@ -104,24 +104,24 @@
                 <label for="responsible-name" class="label">Nome do tutor</label>
                 <div class="input">
                     <i><img src="./src/assets/User--Streamline-Solar.svg" alt="Usuário"></i>
-                    <input type="text" name="responsible-name" id="responsible-name" placeholder="Nome"  />
+                    <input type="text" class="capitalize" name="responsible-name" id="responsible-name" placeholder="Nome"  />
                 </div>
         
                 <label for="pet-name" class="label">Nome do pet</label>
                 <div class="input">
                     <i><img src="./src/assets/Pet-Paw--Streamline-Core.svg" alt="Pet"></i>
-                    <input type="text" name="pet-name" id="pet-name" placeholder="Rex"  />
+                    <input type="text" class="capitalize" name="pet-name" id="pet-name" placeholder="Rex"  />
                 </div>
         
                 <label for="phone" class="label">Telefone</label>
                 <div class="input">
                     <i><img src="./src/assets/Phone--Streamline-Solar.svg" alt="Telefone"></i>
-                    <input type="number" name="phone" id="phone" placeholder="(00) 0 0000-0000"  />
+                    <input type="tel" name="phone" id="phone" placeholder="(00) 0 0000-0000" maxlength="15"  />
                 </div>
         
                 <label for="description" class="label">Descrição do serviço</label>
                 <div class="input">
-                    <input type="text" name="description" id="description" placeholder="Banho e Tosa"  />
+                    <input type="text" class="capitalize" name="description" id="description" placeholder="Banho e Tosa"  />
                 </div>
         
                 <label for="date" class="label">Data</label>

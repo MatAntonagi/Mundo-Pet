@@ -21,15 +21,12 @@ newScheduleBTN.addEventListener("click", () => {
 selectedDate.value = dayjs(new Date()).format("YYYY-MM-DD")
 
 // Recupera os periodos de atendimentos.
-const morning = document.getElementById("morning")
-const afternoon = document.getElementById("afternoon")
-const evening = document.getElementById("evening")
+const morning = document.getElementById("period-morning")
+const afternoon = document.getElementById("period-afternoon")
+const evening = document.getElementById("period-evening")
 
 // Cria funçao para exibir aviso caso não tenha agendamentos.
 function scheduleMessage(container){
-    //cria a UL
-    const ul = document.createElement("ul")
-    ul.classList.add("period")
     // Cria LI
     const li = document.createElement("li")
     //Cria Strong
@@ -38,15 +35,14 @@ function scheduleMessage(container){
 
     // monta a estrutura
     li.appendChild(strong)
-    ul.appendChild(li)
-    container.appendChild(ul)
+    container.appendChild(li)
 }
 
 // Caso o periodo não tenha nem um agendamento aparece um aviso.
 const periods = [morning, afternoon, evening]
 
-periods.forEach(period => {
-    if(!period.querySelector("ul")){
+/*periods.forEach(period => {
+    if(!period.querySelector("li")){
         scheduleMessage(period)
     }
-})
+})*/

@@ -1,6 +1,9 @@
 import dayjs from "dayjs"
 
 import { scheduleNew } from "../../services/schedule-new.js"
+import { schedules } from "../schedules/load.js"
+import { phoneMask } from "./mask-input.js"
+import { firstCapitalLetter } from "./mask-input.js"
 
 const body = document.querySelector("body")
 const scheduleContainer = document.querySelector(".schedule-container")
@@ -11,8 +14,18 @@ const selectedDate = document.getElementById("date-form")
 const clientName = document.getElementById("responsible-name")
 const petName = document.getElementById("pet-name")
 const numberPhone = document.getElementById("phone")
+numberPhone.addEventListener("input", phoneMask)
 const description = document.getElementById("description")
 const hourSelect = document.querySelector("select")
+
+const inputs = document.querySelectorAll(".capitalize")
+
+// Adiciona a primeira letra maiuscula nos inputs.
+inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+        firstCapitalLetter(input)
+    })
+})
 
 // Data atual para carregar o input.
 const inputToday = dayjs(new Date()).format("YYYY-MM-DD")
@@ -51,6 +64,8 @@ form.onsubmit = async (event) => {
         const phone = numberPhone.value
         if(!phone){
             return alert("Insira um contato.")
+        } else if(phone.length < 14){
+            return alert("Insira um contato válido.")
         }
 
         const detail = description.value
@@ -74,6 +89,7 @@ form.onsubmit = async (event) => {
         // Gera um id
         const id = new Date().getTime().toString()
         
+        // Faz o agendamento
         await scheduleNew({
             name,
             pet,
@@ -82,8 +98,12 @@ form.onsubmit = async (event) => {
             when,
             id
         })
-
-
+        // Recarraga os agendamentos
+        await schedules()
+        // Limpa o formulario
+        form.reset()
+        // limpa o campo de hora
+        hourSelect.value = ""
     } catch (error) {
         alert("Não foi possivel realizar o agendamento.")
     }
